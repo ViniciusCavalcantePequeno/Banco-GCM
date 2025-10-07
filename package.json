@@ -1,0 +1,4 @@
+/*
+  Arquivo que define as dependências do projeto (como 'express', 'mongoose', 'jsonwebtoken', 'react', etc.).
+  Contém também scripts de execução, como 'npm start', 'npm test', entre outros.
+*/

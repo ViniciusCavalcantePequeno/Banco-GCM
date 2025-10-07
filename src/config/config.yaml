@@ -1,0 +1,6 @@
+/* 
+  Arquivo de configuração em formato YAML. Contém informações como:
+  - Detalhes do banco de dados (host, porta, credenciais)
+  - Configurações do servidor (porta, ambiente)
+  - Configurações de autenticação (JWT, chaves secretas)
+*/
