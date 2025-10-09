@@ -34,9 +34,8 @@ Membros:
 │   └── test.sh                      # Script para executar testes automatizados
 │
 ├── /config
-│   ├── .env.example                 # Exemplo de variáveis de ambiente
+│   ├── .env                         # Variáveis de ambiente
 │   ├── docker-compose.yml           # Configuração de containers (DB, API, etc.)
-│   ├── nginx.conf                   # Configuração de proxy reverso (se necessário)
 │   └── jest.config.js               # Configuração de testes
 │
 ├── /packages
@@ -67,8 +66,7 @@ Membros:
 │   │   │   │   │
 │   │   │   │   ├── /utils
 │   │   │   │   │   ├── formatCurrency.js
-│   │   │   │   │   ├── validateCPF.js
-│   │   │   │   │   └── dateUtils.js
+│   │   │   │   │   ├── validateUtils.js
 │   │   │   │   │
 │   │   │   │   ├── App.js
 │   │   │   │   └── index.js
@@ -139,8 +137,7 @@ Membros:
 │   │   │   │   └── errorHandler.js
 │   │   │   │
 │   │   │   ├── /utils
-│   │   │   │   ├── logger.js
-│   │   │   │   └── responseHelper.js
+│   │   │   │   ├── transacationUtils.js
 │   │   │   │
 │   │   │   └── server.js
 │   │   │
@@ -153,9 +150,7 @@ Membros:
 │   │
 │   ├── /security
 │   │   ├── /auth
-│   │   │   ├── login.js
-│   │   │   ├── logout.js
-│   │   │   └── register.js
+│   │   │   ├── auth.js
 │   │   ├── /encryption
 │   │   │   ├── hashPassword.js
 │   │   │   └── decryptData.js
@@ -187,11 +182,7 @@ Membros:
 │       ├── notificationService.js
 │       └── package.json
 │
-├── /tests
-│   ├── backend.test.js
-│   ├── frontend.test.js
-│   └── integration.test.js
-│
-└── /logs
-    ├── app.log
-    └── error.log
+└── /tests
+    └── backend.test.js
+    └── frontend.test.js
+    └── integration.test.js
