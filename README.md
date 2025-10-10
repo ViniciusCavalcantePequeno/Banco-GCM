@@ -184,8 +184,7 @@ Membros:
     └── integration.test.js
 ```
 
-
-# Tabelas
+# Itens de Configuração do Software
 
 | **Item de Configuração** | **Tipo** | **Plataforma** | **Localização** | **Versão** | **Responsável** | **Dependências** |
 |----------------------------|-----------|----------------|------------------|-------------|------------------|------------------|
@@ -302,3 +301,4 @@ Membros:
 | pushService.js | Código-fonte | Notificações | `/packages/notifications/push/` | v1.0.0 | **Pedro Alexandre** | — |
 | notificationService.js | Código-fonte | Notificações | `/packages/notifications/` | v1.0.0 | **Vinicius Cavalcante** | emailService.js, smsService.js, pushService.js |
 | package.json | Configuração | Notificações | `/packages/notifications/` | v1.0.0 | **Thiago Santos** | — |
+
