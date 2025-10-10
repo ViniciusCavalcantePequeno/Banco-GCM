@@ -4,7 +4,7 @@ Projeto da Disciplina de **Gerência e Configuração de Mudança**.
 
 Membros:
 - Pedro Henrique Alexandre
-- Thiago dos Santos Araujo
+- Thiago dos Santos Araujo 
 - Vinicius Cavalcante Pequeno
 
 
@@ -301,4 +301,5 @@ Membros:
 | pushService.js | Código-fonte | Notificações | `/packages/notifications/push/` | v1.0.0 | **Pedro Alexandre** | — |
 | notificationService.js | Código-fonte | Notificações | `/packages/notifications/` | v1.0.0 | **Vinicius Cavalcante** | emailService.js, smsService.js, pushService.js |
 | package.json | Configuração | Notificações | `/packages/notifications/` | v1.0.0 | **Thiago Santos** | — |
+
 
