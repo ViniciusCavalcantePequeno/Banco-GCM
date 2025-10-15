@@ -8,25 +8,29 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Loader2, Lock } from "lucide-react"
+import { AuthModule } from "@/lib/auth"
 
 export default function LoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [isEncrypting, setIsEncrypting] = useState(false)
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Console log de autenticação
-    console.log("Auth attempt:", {
-      email,
-      password,
-      timestamp: new Date().toISOString(),
-      userAgent: navigator.userAgent,
-    })
+    setIsEncrypting(true)
 
-    // Simular autenticação bem-sucedida
-    router.push("/home")
+    try {
+      // Chama o módulo de autenticação
+      await AuthModule.authenticate(email, password)
+
+      // Redireciona para a tela inicial
+      router.push("/home")
+    } finally {
+      setIsEncrypting(false)
+    }
   }
 
   return (
@@ -47,6 +51,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={isEncrypting}
               />
             </div>
             <div className="space-y-2">
@@ -58,10 +63,24 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                disabled={isEncrypting}
               />
             </div>
-            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-              Entrar
+            {isEncrypting && (
+              <div className="flex items-center justify-center gap-2 text-sm text-blue-600 bg-blue-50 p-3 rounded-md">
+                <Lock className="h-4 w-4 animate-pulse" />
+                <span>Criptografando dados...</span>
+              </div>
+            )}
+            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isEncrypting}>
+              {isEncrypting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Processando
+                </>
+              ) : (
+                "Entrar"
+              )}
             </Button>
           </form>
         </CardContent>
