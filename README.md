@@ -10,7 +10,7 @@ Membros:
 # Aplicação
 
 <div align="center">
-  <img src="all-devices-black.png" width="800" alt="Telas Iniciais">
+  <img src="assets/all-devices-black.png" width="800" alt="Telas Iniciais">
 </div>
 
 # Estrutura do Projeto
