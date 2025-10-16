@@ -315,7 +315,7 @@ Directory structure:
 
 2. Para instalar as depêndencias:
     ```bash
-    # Para rodar o app Desktop:
+    # Para baixar as depêndencias do app Desktop:
     cd packages/frontend/desktop/
     npm install --legacy-peer-deps
 
@@ -331,4 +331,5 @@ Directory structure:
 3. Para executar os projetos, mude para os respectivos diretórios e execute:
     ```bash
     npm run dev
+
     ```
