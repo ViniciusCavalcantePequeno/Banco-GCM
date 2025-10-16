@@ -11,177 +11,160 @@ Membros:
 # Estrutura do Projeto
 
 ```
-/Banco-GCM
-│
-├── package.json                    # Dependências globais do monorepo
-├── yarn.lock                       # Arquivo de bloqueio (Yarn)
-├── .gitignore                      # Arquivo para ignorar pastas/arquivos no Git
-├── README.md                       # Documentação geral do projeto
-│
-├── /docs
-│   ├── arquitetura.md               # Documentação da arquitetura do sistema
-│   ├── api-endpoints.md             # Lista de endpoints da API
-│   ├── manual-usuario.md            # Manual do usuário final
-│   └── requisitos.md                # Requisitos funcionais e não funcionais
-│
-├── /scripts
-│   ├── build.sh                     # Script para build do sistema
-│   ├── deploy.sh                    # Script para deploy
-│   └── test.sh                      # Script para executar testes automatizados
-│
-├── /config
-│   ├── .env                         # Variáveis de ambiente
-│   ├── docker-compose.yml           # Configuração de containers (DB, API, etc.)
-│   └── jest.config.js               # Configuração de testes
-│
-├── /packages
-│   │
-│   ├── /frontend
-│   │   ├── /web
-│   │   │   ├── /public
-│   │   │   │   ├── index.html
-│   │   │   │   ├── favicon.ico
-│   │   │   │   └── logo.png
-│   │   │   │
-│   │   │   ├── /src
-│   │   │   │   ├── /components
-│   │   │   │   │   ├── Button.jsx
-│   │   │   │   │   ├── InputField.jsx
-│   │   │   │   │   └── Navbar.jsx
-│   │   │   │   │
-│   │   │   │   ├── /pages
-│   │   │   │   │   ├── Home.jsx
-│   │   │   │   │   ├── Login.jsx
-│   │   │   │   │   ├── Dashboard.jsx
-│   │   │   │   │   ├── Transferencia.jsx
-│   │   │   │   │   └── Extrato.jsx
-│   │   │   │   │
-│   │   │   │   ├── /services
-│   │   │   │   │   ├── api.js
-│   │   │   │   │   └── authService.js
-│   │   │   │   │
-│   │   │   │   ├── /utils
-│   │   │   │   │   ├── formatCurrency.js
-│   │   │   │   │   ├── validateUtils.js
-│   │   │   │   │
-│   │   │   │   ├── App.js
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   └── package.json
-│   │   │
-│   │   ├── /mobile
-│   │   │   ├── /src
-│   │   │   │   ├── /components
-│   │   │   │   │   ├── Button.js
-│   │   │   │   │   └── Header.js
-│   │   │   │   │
-│   │   │   │   ├── /screens
-│   │   │   │   │   ├── LoginScreen.js
-│   │   │   │   │   ├── HomeScreen.js
-│   │   │   │   │   ├── TransferScreen.js
-│   │   │   │   │   └── ExtratoScreen.js
-│   │   │   │   │
-│   │   │   │   ├── /services
-│   │   │   │   │   ├── api.js
-│   │   │   │   │   └── authService.js
-│   │   │   │   │
-│   │   │   │   ├── /utils
-│   │   │   │   │   ├── currency.js
-│   │   │   │   │   └── cpfUtils.js
-│   │   │   │   │
-│   │   │   │   ├── App.js
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   └── package.json
-│   │   │
-│   │   └── /desktop
-│   │       ├── /src
-│   │       │   ├── /components
-│   │       │   │   └── WindowMenu.js
-│   │       │   ├── /windows
-│   │       │   │   ├── MainWindow.js
-│   │       │   │   └── LoginWindow.js
-│   │       │   ├── /services
-│   │       │   │   └── ipcService.js
-│   │       │   └── main.js
-│   │       └── package.json
-│   │
-│   ├── /backend
-│   │   ├── /src
-│   │   │   ├── /controllers
-│   │   │   │   ├── userController.js
-│   │   │   │   ├── accountController.js
-│   │   │   │   └── transactionController.js
-│   │   │   │
-│   │   │   ├── /models
-│   │   │   │   ├── User.js
-│   │   │   │   ├── Account.js
-│   │   │   │   └── Transaction.js
-│   │   │   │
-│   │   │   ├── /routes
-│   │   │   │   ├── userRoutes.js
-│   │   │   │   ├── accountRoutes.js
-│   │   │   │   └── transactionRoutes.js
-│   │   │   │
-│   │   │   ├── /services
-│   │   │   │   ├── transactionService.js
-│   │   │   │   ├── userService.js
-│   │   │   │   └── accountService.js
-│   │   │   │
-│   │   │   ├── /middlewares
-│   │   │   │   ├── authMiddleware.js
-│   │   │   │   └── errorHandler.js
-│   │   │   │
-│   │   │   ├── /utils
-│   │   │   │   ├── transacationUtils.js
-│   │   │   │
-│   │   │   └── server.js
-│   │   │
-│   │   ├── /config
-│   │   │   ├── db.config.js
-│   │   │   ├── jwt.config.js
-│   │   │   └── app.config.js
-│   │   │
-│   │   └── package.json
-│   │
-│   ├── /security
-│   │   ├── /auth
-│   │   │   ├── auth.js
-│   │   ├── /encryption
-│   │   │   ├── hashPassword.js
-│   │   │   └── decryptData.js
-│   │   ├── /jwt
-│   │   │   ├── generateToken.js
-│   │   │   └── verifyToken.js
-│   │   ├── /utils
-│   │   │   └── securityHelpers.js
-│   │   └── package.json
-│   │
-│   ├── /database
-│   │   ├── /migrations
-│   │   │   ├── 001-create-users.js
-│   │   │   ├── 002-create-accounts.js
-│   │   │   └── 003-create-transactions.js
-│   │   ├── /seeds
-│   │   │   ├── usersSeed.js
-│   │   │   └── accountsSeed.js
-│   │   ├── database.js
-│   │   └── package.json
-│   │
-│   └── /notifications
-│       ├── /email
-│       │   └── emailService.js
-│       ├── /sms
-│       │   └── smsService.js
-│       ├── /push
-│       │   └── pushService.js
-│       ├── notificationService.js
-│       └── package.json
-│
-└── /tests
-    └── backend.test.js
-    └── frontend.test.js
-    └── integration.test.js
+Directory structure:
+└── Banco-gcm/
+    ├── config/
+    │   ├── docker-compose.yml
+    │   └── jest.config.js
+    ├── docs/
+    │   ├── api-endpoints.md
+    │   ├── arquitetura.md
+    │   ├── manual-usuario.md
+    │   └── requisitos.md
+    ├── packages/
+    │   ├── backend/
+    │   │   ├── package.json
+    │   │   ├── config/
+    │   │   │   └── config.yaml
+    │   │   └── src/
+    │   │       ├── server.js
+    │   │       ├── controllers/
+    │   │       │   ├── accountController.js
+    │   │       │   ├── transactionController.js
+    │   │       │   └── userController.js
+    │   │       ├── middlewares/
+    │   │       │   └── authMiddleware.js
+    │   │       ├── models/
+    │   │       │   ├── Account.js
+    │   │       │   ├── Transaction.js
+    │   │       │   └── User.js
+    │   │       ├── routes/
+    │   │       │   ├── accountRoutes.js
+    │   │       │   ├── transactionRoutes.js
+    │   │       │   └── userRoutes.js
+    │   │       ├── services/
+    │   │       │   ├── accountService.js
+    │   │       │   ├── transactionService.js
+    │   │       │   └── userService.js
+    │   │       └── utils/
+    │   │           └── transacationUtils.js
+    │   ├── database/
+    │   │   ├── database.js
+    │   │   └── package.json
+    │   └── frontend/
+    │       ├── desktop/
+    │       │   ├── components.json
+    │       │   ├── next.config.mjs
+    │       │   ├── pnpm-lock.yaml
+    │       │   ├── postcss.config.mjs
+    │       │   ├── tsconfig.json
+    │       │   ├── app/
+    │       │   │   ├── layout.tsx
+    │       │   │   └── page.tsx
+    │       │   ├── components/
+    │       │   │   ├── theme-provider.tsx
+    │       │   │   └── ui/
+    │       │   │       ├── aspect-ratio.tsx
+    │       │   │       ├── collapsible.tsx
+    │       │   │       ├── input.tsx
+    │       │   │       ├── kbd.tsx
+    │       │   │       ├── label.tsx
+    │       │   │       ├── progress.tsx
+    │       │   │       ├── separator.tsx
+    │       │   │       ├── skeleton.tsx
+    │       │   │       ├── sonner.tsx
+    │       │   │       ├── spinner.tsx
+    │       │   │       ├── textarea.tsx
+    │       │   │       ├── toaster.tsx
+    │       │   │       └── use-mobile.tsx
+    │       │   ├── hooks/
+    │       │   │   └── use-mobile.ts
+    │       │   ├── lib/
+    │       │   │   ├── auth.ts
+    │       │   │   ├── security.ts
+    │       │   │   └── utils.ts
+    │       │   └── src/
+    │       │       ├── components/
+    │       │       │   └── WindowMenu.js
+    │       │       └── windows/
+    │       │           └── MainWindow.js
+    │       ├── mobile/
+    │       │   ├── components.json
+    │       │   ├── next.config.mjs
+    │       │   ├── pnpm-lock.yaml
+    │       │   ├── postcss.config.mjs
+    │       │   ├── tsconfig.json
+    │       │   ├── app/
+    │       │   │   ├── layout.tsx
+    │       │   │   └── page.tsx
+    │       │   ├── components/
+    │       │   │   ├── theme-provider.tsx
+    │       │   │   └── ui/
+    │       │   │       ├── aspect-ratio.tsx
+    │       │   │       ├── collapsible.tsx
+    │       │   │       ├── input.tsx
+    │       │   │       ├── kbd.tsx
+    │       │   │       ├── label.tsx
+    │       │   │       ├── progress.tsx
+    │       │   │       ├── separator.tsx
+    │       │   │       ├── skeleton.tsx
+    │       │   │       ├── sonner.tsx
+    │       │   │       ├── spinner.tsx
+    │       │   │       ├── textarea.tsx
+    │       │   │       ├── toaster.tsx
+    │       │   │       └── use-mobile.tsx
+    │       │   ├── hooks/
+    │       │   │   └── use-mobile.ts
+    │       │   ├── lib/
+    │       │   │   ├── auth.ts
+    │       │   │   ├── security.ts
+    │       │   │   └── utils.ts
+    │       │   └── src/
+    │       │       ├── components/
+    │       │       │   └── Button.js
+    │       │       ├── screens/
+    │       │       │   └── LoginScreen.js
+    │       │       └── services/
+    │       │           └── authService.js
+    │       └── web/
+    │           ├── components.json
+    │           ├── next.config.mjs
+    │           ├── pnpm-lock.yaml
+    │           ├── postcss.config.mjs
+    │           ├── tsconfig.json
+    │           ├── app/
+    │           │   ├── layout.tsx
+    │           │   └── page.tsx
+    │           ├── components/
+    │           │   ├── theme-provider.tsx
+    │           │   └── ui/
+    │           │       ├── aspect-ratio.tsx
+    │           │       ├── collapsible.tsx
+    │           │       ├── input.tsx
+    │           │       ├── kbd.tsx
+    │           │       ├── label.tsx
+    │           │       ├── progress.tsx
+    │           │       ├── separator.tsx
+    │           │       ├── skeleton.tsx
+    │           │       ├── sonner.tsx
+    │           │       ├── spinner.tsx
+    │           │       ├── textarea.tsx
+    │           │       ├── toaster.tsx
+    │           │       └── use-mobile.tsx
+    │           ├── hooks/
+    │           │   └── use-mobile.ts
+    │           └── lib/
+    │               ├── auth.ts
+    │               ├── security.ts
+    │               └── utils.ts
+    ├── scripts/
+    │   ├── build.sh
+    │   ├── deploy.sh
+    │   └── test.sh
+    └── tests/
+        ├── backend.test.js
+        ├── frontend.test.js
+        └── integration.test.js
 ```
 
 # Itens de Configuração do Software
