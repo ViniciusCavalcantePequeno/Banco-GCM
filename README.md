@@ -53,9 +53,10 @@ Directory structure:
     │   │       │   └── userService.js
     │   │       └── utils/
     │   │           └── transacationUtils.js
-    │   ├── database/
-    │   │   ├── database.js
-    │   │   └── package.json
+    │   ├── packages/
+    │   │    └── database/
+    │   │        ├──  database.js
+    │   │        └──  package.json
     │   └── frontend/
     │       ├── desktop/
     │       │   ├── components.json
