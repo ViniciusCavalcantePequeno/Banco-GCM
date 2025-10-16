@@ -7,6 +7,11 @@ Membros:
 - Thiago dos Santos Araujo 
 - Vinicius Cavalcante Pequeno
 
+# Aplicação
+
+<div align="center">
+  <img src="all-devices-black.png" width="800" alt="Telas Iniciais">
+</div>
 
 # Estrutura do Projeto
 
@@ -304,8 +309,9 @@ Directory structure:
 | src/services/userService.js | Código-fonte | Back-end | /backend/src/services/ | v1.0.0 | Pedro Alexandre | — |
 | src/utils/transacationUtils.js | Código-fonte | Back-end | /backend/src/utils/ | v1.0.0 | Vinicius Cavalcante | — |
 
-# Como Executar
-## Passos para execução
+
+# Passos para Executar
+
 
 1. Clone o repositório:
     ```bash
