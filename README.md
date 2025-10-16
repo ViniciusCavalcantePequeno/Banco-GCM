@@ -303,3 +303,32 @@ Directory structure:
 | src/services/transactionService.js | Código-fonte | Back-end | /backend/src/services/ | v1.0.0 | Thiago Santos | — |
 | src/services/userService.js | Código-fonte | Back-end | /backend/src/services/ | v1.0.0 | Pedro Alexandre | — |
 | src/utils/transacationUtils.js | Código-fonte | Back-end | /backend/src/utils/ | v1.0.0 | Vinicius Cavalcante | — |
+
+# Como Executar
+## Passos para execução
+
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/ViniciusCavalcantePequeno/Banco-GCM.git
+    cd Banco-GCM/
+    ```
+
+2. Para instalar as depêndencias:
+    ```bash
+    # Para rodar o app Desktop:
+    cd packages/frontend/desktop/
+    npm install --legacy-peer-deps
+
+    # Para baixar as depêndencias do app Web
+    cd packages/frontend/web/
+    npm i
+
+    # Para baixar as depêndencias do app Mobile
+    cd packages/frontend/mobile/
+    npm i
+    ```
+
+3. Para executar os projetos, mude para os respectivos diretórios e execute:
+    ```bash
+    npm run dev
+    ```
