@@ -23,10 +23,8 @@ export default function LoginPage() {
     setIsEncrypting(true)
 
     try {
-      // Chama o módulo de autenticação
       await AuthModule.authenticate(email, password)
 
-      // Redireciona para a tela inicial
       router.push("/home")
     } finally {
       setIsEncrypting(false)
