@@ -17,7 +17,9 @@ Membros:
 
 ```
 Directory structure:
-└── Banco-gcm/
+└── viniciuscavalcantepequeno-banco-gcm/
+    ├── README.md
+    ├── package.json
     ├── config/
     │   ├── docker-compose.yml
     │   └── jest.config.js
@@ -53,112 +55,256 @@ Directory structure:
     │   │       │   └── userService.js
     │   │       └── utils/
     │   │           └── transacationUtils.js
-    │   ├── packages/
-    │   │    └── database/
-    │   │        ├──  database.js
-    │   │        └──  package.json
+    │   ├── database/
+    │   │   ├── database.js
+    │   │   └── package.json
     │   └── frontend/
     │       ├── desktop/
     │       │   ├── components.json
     │       │   ├── next.config.mjs
+    │       │   ├── package.json
     │       │   ├── pnpm-lock.yaml
     │       │   ├── postcss.config.mjs
     │       │   ├── tsconfig.json
     │       │   ├── app/
+    │       │   │   ├── globals.css
     │       │   │   ├── layout.tsx
-    │       │   │   └── page.tsx
+    │       │   │   ├── page.tsx
+    │       │   │   ├── home/
+    │       │   │   │   └── page.tsx
+    │       │   │   └── login/
+    │       │   │       └── page.tsx
     │       │   ├── components/
     │       │   │   ├── theme-provider.tsx
     │       │   │   └── ui/
+    │       │   │       ├── accordion.tsx
+    │       │   │       ├── alert-dialog.tsx
+    │       │   │       ├── alert.tsx
     │       │   │       ├── aspect-ratio.tsx
+    │       │   │       ├── avatar.tsx
+    │       │   │       ├── badge.tsx
+    │       │   │       ├── breadcrumb.tsx
+    │       │   │       ├── button-group.tsx
+    │       │   │       ├── button.tsx
+    │       │   │       ├── calendar.tsx
+    │       │   │       ├── card.tsx
+    │       │   │       ├── carousel.tsx
+    │       │   │       ├── chart.tsx
+    │       │   │       ├── checkbox.tsx
     │       │   │       ├── collapsible.tsx
+    │       │   │       ├── command.tsx
+    │       │   │       ├── context-menu.tsx
+    │       │   │       ├── dialog.tsx
+    │       │   │       ├── drawer.tsx
+    │       │   │       ├── dropdown-menu.tsx
+    │       │   │       ├── empty.tsx
+    │       │   │       ├── field.tsx
+    │       │   │       ├── form.tsx
+    │       │   │       ├── hover-card.tsx
+    │       │   │       ├── input-group.tsx
+    │       │   │       ├── input-otp.tsx
     │       │   │       ├── input.tsx
+    │       │   │       ├── item.tsx
     │       │   │       ├── kbd.tsx
     │       │   │       ├── label.tsx
+    │       │   │       ├── menubar.tsx
+    │       │   │       ├── navigation-menu.tsx
+    │       │   │       ├── pagination.tsx
+    │       │   │       ├── popover.tsx
     │       │   │       ├── progress.tsx
+    │       │   │       ├── radio-group.tsx
+    │       │   │       ├── resizable.tsx
+    │       │   │       ├── scroll-area.tsx
+    │       │   │       ├── select.tsx
     │       │   │       ├── separator.tsx
+    │       │   │       ├── sheet.tsx
+    │       │   │       ├── sidebar.tsx
     │       │   │       ├── skeleton.tsx
+    │       │   │       ├── slider.tsx
     │       │   │       ├── sonner.tsx
     │       │   │       ├── spinner.tsx
+    │       │   │       ├── switch.tsx
+    │       │   │       ├── table.tsx
+    │       │   │       ├── tabs.tsx
     │       │   │       ├── textarea.tsx
+    │       │   │       ├── toast.tsx
     │       │   │       ├── toaster.tsx
-    │       │   │       └── use-mobile.tsx
+    │       │   │       ├── toggle-group.tsx
+    │       │   │       ├── toggle.tsx
+    │       │   │       ├── tooltip.tsx
+    │       │   │       ├── use-mobile.tsx
+    │       │   │       └── use-toast.ts
     │       │   ├── hooks/
-    │       │   │   └── use-mobile.ts
+    │       │   │   ├── use-mobile.ts
+    │       │   │   └── use-toast.ts
     │       │   ├── lib/
     │       │   │   ├── auth.ts
     │       │   │   ├── security.ts
     │       │   │   └── utils.ts
-    │       │   └── src/
-    │       │       ├── components/
-    │       │       │   └── WindowMenu.js
-    │       │       └── windows/
-    │       │           └── MainWindow.js
+    │       │   └── styles/
+    │       │       └── globals.css
     │       ├── mobile/
     │       │   ├── components.json
     │       │   ├── next.config.mjs
+    │       │   ├── package.json
     │       │   ├── pnpm-lock.yaml
     │       │   ├── postcss.config.mjs
     │       │   ├── tsconfig.json
     │       │   ├── app/
+    │       │   │   ├── globals.css
     │       │   │   ├── layout.tsx
-    │       │   │   └── page.tsx
+    │       │   │   ├── page.tsx
+    │       │   │   ├── home/
+    │       │   │   │   └── page.tsx
+    │       │   │   └── login/
+    │       │   │       └── page.tsx
     │       │   ├── components/
     │       │   │   ├── theme-provider.tsx
     │       │   │   └── ui/
+    │       │   │       ├── accordion.tsx
+    │       │   │       ├── alert-dialog.tsx
+    │       │   │       ├── alert.tsx
     │       │   │       ├── aspect-ratio.tsx
+    │       │   │       ├── avatar.tsx
+    │       │   │       ├── badge.tsx
+    │       │   │       ├── breadcrumb.tsx
+    │       │   │       ├── button-group.tsx
+    │       │   │       ├── button.tsx
+    │       │   │       ├── calendar.tsx
+    │       │   │       ├── card.tsx
+    │       │   │       ├── carousel.tsx
+    │       │   │       ├── chart.tsx
+    │       │   │       ├── checkbox.tsx
     │       │   │       ├── collapsible.tsx
+    │       │   │       ├── command.tsx
+    │       │   │       ├── context-menu.tsx
+    │       │   │       ├── dialog.tsx
+    │       │   │       ├── drawer.tsx
+    │       │   │       ├── dropdown-menu.tsx
+    │       │   │       ├── empty.tsx
+    │       │   │       ├── field.tsx
+    │       │   │       ├── form.tsx
+    │       │   │       ├── hover-card.tsx
+    │       │   │       ├── input-group.tsx
+    │       │   │       ├── input-otp.tsx
     │       │   │       ├── input.tsx
+    │       │   │       ├── item.tsx
     │       │   │       ├── kbd.tsx
     │       │   │       ├── label.tsx
+    │       │   │       ├── menubar.tsx
+    │       │   │       ├── navigation-menu.tsx
+    │       │   │       ├── pagination.tsx
+    │       │   │       ├── popover.tsx
     │       │   │       ├── progress.tsx
+    │       │   │       ├── radio-group.tsx
+    │       │   │       ├── resizable.tsx
+    │       │   │       ├── scroll-area.tsx
+    │       │   │       ├── select.tsx
     │       │   │       ├── separator.tsx
+    │       │   │       ├── sheet.tsx
+    │       │   │       ├── sidebar.tsx
     │       │   │       ├── skeleton.tsx
+    │       │   │       ├── slider.tsx
     │       │   │       ├── sonner.tsx
     │       │   │       ├── spinner.tsx
+    │       │   │       ├── switch.tsx
+    │       │   │       ├── table.tsx
+    │       │   │       ├── tabs.tsx
     │       │   │       ├── textarea.tsx
+    │       │   │       ├── toast.tsx
     │       │   │       ├── toaster.tsx
-    │       │   │       └── use-mobile.tsx
+    │       │   │       ├── toggle-group.tsx
+    │       │   │       ├── toggle.tsx
+    │       │   │       ├── tooltip.tsx
+    │       │   │       ├── use-mobile.tsx
+    │       │   │       └── use-toast.ts
     │       │   ├── hooks/
-    │       │   │   └── use-mobile.ts
+    │       │   │   ├── use-mobile.ts
+    │       │   │   └── use-toast.ts
     │       │   ├── lib/
     │       │   │   ├── auth.ts
     │       │   │   ├── security.ts
     │       │   │   └── utils.ts
-    │       │   └── src/
-    │       │       ├── components/
-    │       │       │   └── Button.js
-    │       │       ├── screens/
-    │       │       │   └── LoginScreen.js
-    │       │       └── services/
-    │       │           └── authService.js
+    │       │   └── styles/
+    │       │       └── globals.css
     │       └── web/
     │           ├── components.json
     │           ├── next.config.mjs
+    │           ├── package.json
     │           ├── pnpm-lock.yaml
     │           ├── postcss.config.mjs
     │           ├── tsconfig.json
     │           ├── app/
+    │           │   ├── globals.css
     │           │   ├── layout.tsx
-    │           │   └── page.tsx
+    │           │   ├── page.tsx
+    │           │   ├── home/
+    │           │   │   └── page.tsx
+    │           │   └── login/
+    │           │       └── page.tsx
     │           ├── components/
     │           │   ├── theme-provider.tsx
     │           │   └── ui/
+    │           │       ├── accordion.tsx
+    │           │       ├── alert-dialog.tsx
+    │           │       ├── alert.tsx
     │           │       ├── aspect-ratio.tsx
+    │           │       ├── avatar.tsx
+    │           │       ├── badge.tsx
+    │           │       ├── breadcrumb.tsx
+    │           │       ├── button-group.tsx
+    │           │       ├── button.tsx
+    │           │       ├── calendar.tsx
+    │           │       ├── card.tsx
+    │           │       ├── carousel.tsx
+    │           │       ├── chart.tsx
+    │           │       ├── checkbox.tsx
     │           │       ├── collapsible.tsx
+    │           │       ├── command.tsx
+    │           │       ├── context-menu.tsx
+    │           │       ├── dialog.tsx
+    │           │       ├── drawer.tsx
+    │           │       ├── dropdown-menu.tsx
+    │           │       ├── empty.tsx
+    │           │       ├── field.tsx
+    │           │       ├── form.tsx
+    │           │       ├── hover-card.tsx
+    │           │       ├── input-group.tsx
+    │           │       ├── input-otp.tsx
     │           │       ├── input.tsx
+    │           │       ├── item.tsx
     │           │       ├── kbd.tsx
     │           │       ├── label.tsx
+    │           │       ├── menubar.tsx
+    │           │       ├── navigation-menu.tsx
+    │           │       ├── pagination.tsx
+    │           │       ├── popover.tsx
     │           │       ├── progress.tsx
+    │           │       ├── radio-group.tsx
+    │           │       ├── resizable.tsx
+    │           │       ├── scroll-area.tsx
+    │           │       ├── select.tsx
     │           │       ├── separator.tsx
+    │           │       ├── sheet.tsx
+    │           │       ├── sidebar.tsx
     │           │       ├── skeleton.tsx
+    │           │       ├── slider.tsx
     │           │       ├── sonner.tsx
     │           │       ├── spinner.tsx
+    │           │       ├── switch.tsx
+    │           │       ├── table.tsx
+    │           │       ├── tabs.tsx
     │           │       ├── textarea.tsx
+    │           │       ├── toast.tsx
     │           │       ├── toaster.tsx
-    │           │       └── use-mobile.tsx
+    │           │       ├── toggle-group.tsx
+    │           │       ├── toggle.tsx
+    │           │       ├── tooltip.tsx
+    │           │       ├── use-mobile.tsx
+    │           │       └── use-toast.ts
     │           ├── hooks/
-    │           │   └── use-mobile.ts
+    │           │   ├── use-mobile.ts
+    │           │   └── use-toast.ts
     │           └── lib/
     │               ├── auth.ts
     │               ├── security.ts
@@ -252,9 +398,7 @@ Directory structure:
 | hooks/use-mobile.ts | Código-fonte | Desktop | /frontend/desktop/hooks/ | v1.0.0 | Pedro Alexandre | — |
 | lib/auth.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Thiago Santos | — |
 | lib/security.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Vinicius Cavalcante | crypto |
-| lib/utils.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Pedro Alexandre | — |
-| src/components/WindowMenu.js | Código-fonte | Desktop | /frontend/desktop/src/components/ | v1.0.0 | Thiago Santos | — |
-| src/windows/MainWindow.js | Código-fonte | Desktop | /frontend/desktop/src/windows/ | v1.0.0 | Vinicius Cavalcante | electron |
+| lib/utils.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Pedro Alexandre | — | |
 
 ## Front-end Mobile
 
@@ -285,8 +429,6 @@ Directory structure:
 | lib/auth.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Pedro Alexandre | — |
 | lib/security.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Thiago Santos | crypto |
 | lib/utils.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Vinicius Cavalcante | — |
-| src/components/Button.js | Código-fonte | Mobile | /frontend/mobile/src/components/ | v1.0.0 | Pedro Alexandre | react-native |
-| src/screens/LoginScreen.js | Código-fonte | Mobile | /frontend/mobile/src/screens/ | v1.0.0 | Thiago
 
 ### Back-end
 
