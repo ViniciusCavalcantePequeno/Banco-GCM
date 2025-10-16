@@ -169,120 +169,137 @@ Directory structure:
 
 # Itens de Configuração do Software
 
-| **Item de Configuração** | **Tipo** | **Plataforma** | **Localização** | **Versão** | **Responsável** | **Dependências** |
-|----------------------------|-----------|----------------|------------------|-------------|------------------|------------------|
-| package.json | Configuração | Todos | `/` | v1.0.0 | **Pedro Alexandre** | — |
-| yarn.lock | Configuração | Todos | `/` | v1.0.0 | **Vinicius Cavalcante** | package.json |
-| .gitignore | Configuração | Todos | `/` | v1.0.0 | **Thiago Santos** | — |
-| README.md | Documentação | Todos | `/` | v1.0.0 | **Pedro Alexandre** | — |
-| arquitetura.md | Documentação | Todos | `/docs/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| api-endpoints.md | Documentação | Backend | `/docs/` | v1.0.0 | **Thiago Santos** | — |
-| manual-usuario.md | Documentação | Web/Mobile/Desktop | `/docs/` | v1.0.0 | **Pedro Alexandre** | — |
-| requisitos.md | Documentação | Todos | `/docs/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| build.sh | Script | Todos | `/scripts/` | v1.0.0 | **Thiago Santos** | — |
-| deploy.sh | Script | Todos | `/scripts/` | v1.0.0 | **Pedro Alexandre** | build.sh |
-| test.sh | Script | Todos | `/scripts/` | v1.0.0 | **Vinicius Cavalcante** | jest.config.js |
-| .env | Configuração | Todos | `/config/` | v1.0.0 | **Thiago Santos** | — |
-| docker-compose.yml | Configuração | Backend | `/config/` | v1.0.0 | **Pedro Alexandre** | .env |
-| jest.config.js | Configuração | Todos | `/config/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| backend.test.js | Teste | Backend | `/tests/` | v1.0.0 | **Thiago Santos** | jest.config.js |
-| frontend.test.js | Teste | Web | `/tests/` | v1.0.0 | **Pedro Alexandre** | jest.config.js |
-| integration.test.js | Teste | Todos | `/tests/` | v1.0.0 | **Vinicius Cavalcante** | backend.test.js, frontend.test.js |
+### Arquivos Gerais
+
+| Item de Configuração | Tipo | Plataforma | Localização | Versão | Responsável | Dependências |
+|-----------------------|------|-------------|--------------|---------|--------------|---------------|
+| config/docker-compose.yml | Configuração | Geral | /config/ | v1.0.0 | Thiago Santos | docker |
+| config/jest.config.js | Configuração | Geral | /config/ | v1.0.0 | Pedro Alexandre | jest |
+| docs/api-endpoints.md | Documentação | Geral | /docs/ | v1.0.0 | Vinicius Cavalcante | — |
+| docs/arquitetura.md | Documentação | Geral | /docs/ | v1.0.0 | Thiago Santos | — |
+| docs/manual-usuario.md | Documentação | Geral | /docs/ | v1.0.0 | Pedro Alexandre | — |
+| docs/requisitos.md | Documentação | Geral | /docs/ | v1.0.0 | Vinicius Cavalcante | — |
+| docs/database/database.js | Código-fonte | Geral | /docs/database/ | v1.0.0 | Thiago Santos | sqlite |
+| docs/database/package.json | Configuração | Geral | /docs/database/ | v1.0.0 | Pedro Alexandre | npm |
+| scripts/build.sh | Script | Geral | /scripts/ | v1.0.0 | Vinicius Cavalcante | bash |
+| scripts/deploy.sh | Script | Geral | /scripts/ | v1.0.0 | Thiago Santos | bash |
+| scripts/test.sh | Script | Geral | /scripts/ | v1.0.0 | Pedro Alexandre | bash |
+| tests/backend.test.js | Teste | Geral | /tests/ | v1.0.0 | Vinicius Cavalcante | jest |
+| tests/frontend.test.js | Teste | Geral | /tests/ | v1.0.0 | Thiago Santos | jest |
+| tests/integration.test.js | Teste | Geral | /tests/ | v1.0.0 | Pedro Alexandre | jest |
 
 ## Front-end Web
 
-| **Item de Configuração** | **Tipo** | **Plataforma** | **Localização** | **Versão** | **Responsável** | **Dependências** |
-|----------------------------|-----------|----------------|------------------|-------------|------------------|------------------|
-| index.html | Recurso | Web | `/packages/frontend/web/public/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| favicon.ico | Recurso | Web | `/packages/frontend/web/public/` | v1.0.0 | **Thiago Santos** | — |
-| logo.png | Recurso | Web | `/packages/frontend/web/public/` | v1.0.0 | **Pedro Alexandre** | — |
-| Button.jsx | Código-fonte | Web | `/packages/frontend/web/src/components/` | v1.0.0 | **Thiago Santos** | — |
-| InputField.jsx | Código-fonte | Web | `/packages/frontend/web/src/components/` | v1.0.0 | **Pedro Alexandre** | — |
-| Navbar.jsx | Código-fonte | Web | `/packages/frontend/web/src/components/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| Home.jsx | Código-fonte | Web | `/packages/frontend/web/src/pages/` | v1.0.0 | **Pedro Alexandre** | Navbar.jsx |
-| Login.jsx | Código-fonte | Web | `/packages/frontend/web/src/pages/` | v1.0.0 | **Thiago Santos** | InputField.jsx |
-| Dashboard.jsx | Código-fonte | Web | `/packages/frontend/web/src/pages/` | v1.0.0 | **Vinicius Cavalcante** | Navbar.jsx |
-| Transferencia.jsx | Código-fonte | Web | `/packages/frontend/web/src/pages/` | v1.0.0 | **Pedro Alexandre** | formatCurrency.js |
-| Extrato.jsx | Código-fonte | Web | `/packages/frontend/web/src/pages/` | v1.0.0 | **Thiago Santos** | formatCurrency.js |
-| api.js | Código-fonte | Web | `/packages/frontend/web/src/services/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| authService.js | Código-fonte | Web | `/packages/frontend/web/src/services/` | v1.0.0 | **Pedro Alexandre** | api.js |
-| formatCurrency.js | Código-fonte | Web | `/packages/frontend/web/src/utils/` | v1.0.0 | **Thiago Santos** | — |
-| validateUtils.js | Código-fonte | Web | `/packages/frontend/web/src/utils/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| App.js | Código-fonte | Web | `/packages/frontend/web/src/` | v1.0.0 | **Pedro Alexandre** | Navbar.jsx, api.js |
-| index.js | Código-fonte | Web | `/packages/frontend/web/src/` | v1.0.0 | **Thiago Santos** | App.js |
-| package.json | Configuração | Web | `/packages/frontend/web/` | v1.0.0 | **Vinicius Cavalcante** | — |
-
-## Front-end Mobile
-
-| **Item de Configuração** | **Tipo** | **Plataforma** | **Localização** | **Versão** | **Responsável** | **Dependências** |
-|----------------------------|-----------|----------------|------------------|-------------|------------------|------------------|
-| Button.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/components/` | v1.0.0 | **Thiago Santos** | — |
-| Header.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/components/` | v1.0.0 | **Pedro Alexandre** | — |
-| LoginScreen.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/screens/` | v1.0.0 | **Vinicius Cavalcante** | Button.js, Header.js |
-| HomeScreen.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/screens/` | v1.0.0 | **Thiago Santos** | Header.js |
-| TransferScreen.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/screens/` | v1.0.0 | **Pedro Alexandre** | currency.js |
-| ExtratoScreen.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/screens/` | v1.0.0 | **Vinicius Cavalcante** | currency.js |
-| api.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/services/` | v1.0.0 | **Thiago Santos** | — |
-| authService.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/services/` | v1.0.0 | **Pedro Alexandre** | api.js |
-| currency.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/utils/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| cpfUtils.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/utils/` | v1.0.0 | **Thiago Santos** | — |
-| App.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/` | v1.0.0 | **Pedro Alexandre** | Header.js, api.js |
-| index.js | Código-fonte | Mobile | `/packages/frontend/mobile/src/` | v1.0.0 | **Vinicius Cavalcante** | App.js |
-| package.json | Configuração | Mobile | `/packages/frontend/mobile/` | v1.0.0 | **Thiago Santos** | — |
+| Item de Configuração | Tipo | Plataforma | Localização | Versão | Responsável | Dependências |
+|-----------------------|------|-------------|--------------|---------|--------------|---------------|
+| components.json | Configuração | Web | /frontend/web/ | v1.0.0 | Thiago Santos | — |
+| next.config.mjs | Configuração | Web | /frontend/web/ | v1.0.0 | Pedro Alexandre | — |
+| pnpm-lock.yaml | Configuração | Web | /frontend/web/ | v1.0.0 | Vinicius Cavalcante | — |
+| postcss.config.mjs | Configuração | Web | /frontend/web/ | v1.0.0 | Thiago Santos | postcss |
+| tsconfig.json | Configuração | Web | /frontend/web/ | v1.0.0 | Pedro Alexandre | typescript |
+| app/layout.tsx | Código-fonte | Web | /frontend/web/app/ | v1.0.0 | Vinicius Cavalcante | — |
+| app/page.tsx | Código-fonte | Web | /frontend/web/app/ | v1.0.0 | Thiago Santos | — |
+| components/theme-provider.tsx | Código-fonte | Web | /frontend/web/components/ | v1.0.0 | Pedro Alexandre | react |
+| components/ui/aspect-ratio.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/collapsible.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/input.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/kbd.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/label.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/progress.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/separator.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/skeleton.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/sonner.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/spinner.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/textarea.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/toaster.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/use-mobile.tsx | Código-fonte | Web | /frontend/web/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| hooks/use-mobile.ts | Código-fonte | Web | /frontend/web/hooks/ | v1.0.0 | Thiago Santos | — |
+| lib/auth.ts | Código-fonte | Web | /frontend/web/lib/ | v1.0.0 | Pedro Alexandre | — |
+| lib/security.ts | Código-fonte | Web | /frontend/web/lib/ | v1.0.0 | Vinicius Cavalcante | crypto |
+| lib/utils.ts | Código-fonte | Web | /frontend/web/lib/ | v1.0.0 | Thiago Santos | — |
 
 ## Front-end Desktop
 
-| **Item de Configuração** | **Tipo** | **Plataforma** | **Localização** | **Versão** | **Responsável** | **Dependências** |
-|----------------------------|-----------|----------------|------------------|-------------|------------------|------------------|
-| WindowMenu.js | Código-fonte | Desktop | `/packages/frontend/desktop/src/components/` | v1.0.0 | **Pedro Alexandre** | — |
-| MainWindow.js | Código-fonte | Desktop | `/packages/frontend/desktop/src/windows/` | v1.0.0 | **Vinicius Cavalcante** | WindowMenu.js |
-| LoginWindow.js | Código-fonte | Desktop | `/packages/frontend/desktop/src/windows/` | v1.0.0 | **Thiago Santos** | WindowMenu.js |
-| ipcService.js | Código-fonte | Desktop | `/packages/frontend/desktop/src/services/` | v1.0.0 | **Pedro Alexandre** | — |
-| main.js | Código-fonte | Desktop | `/packages/frontend/desktop/src/` | v1.0.0 | **Vinicius Cavalcante** | ipcService.js, MainWindow.js |
-| package.json | Configuração | Desktop | `/packages/frontend/desktop/` | v1.0.0 | **Thiago Santos** | — |
+| Item de Configuração | Tipo | Plataforma | Localização | Versão | Responsável | Dependências |
+|-----------------------|------|-------------|--------------|---------|--------------|---------------|
+| components.json | Configuração | Desktop | /frontend/desktop/ | v1.0.0 | Pedro Alexandre | — |
+| next.config.mjs | Configuração | Desktop | /frontend/desktop/ | v1.0.0 | Thiago Santos | — |
+| pnpm-lock.yaml | Configuração | Desktop | /frontend/desktop/ | v1.0.0 | Vinicius Cavalcante | — |
+| postcss.config.mjs | Configuração | Desktop | /frontend/desktop/ | v1.0.0 | Pedro Alexandre | postcss |
+| tsconfig.json | Configuração | Desktop | /frontend/desktop/ | v1.0.0 | Thiago Santos | typescript |
+| app/layout.tsx | Código-fonte | Desktop | /frontend/desktop/app/ | v1.0.0 | Vinicius Cavalcante | — |
+| app/page.tsx | Código-fonte | Desktop | /frontend/desktop/app/ | v1.0.0 | Pedro Alexandre | — |
+| components/theme-provider.tsx | Código-fonte | Desktop | /frontend/desktop/components/ | v1.0.0 | Thiago Santos | react |
+| components/ui/aspect-ratio.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/collapsible.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/input.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/kbd.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/label.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/progress.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/separator.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/skeleton.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/sonner.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/spinner.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/textarea.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/toaster.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/use-mobile.tsx | Código-fonte | Desktop | /frontend/desktop/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| hooks/use-mobile.ts | Código-fonte | Desktop | /frontend/desktop/hooks/ | v1.0.0 | Pedro Alexandre | — |
+| lib/auth.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Thiago Santos | — |
+| lib/security.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Vinicius Cavalcante | crypto |
+| lib/utils.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Pedro Alexandre | — |
+| src/components/WindowMenu.js | Código-fonte | Desktop | /frontend/desktop/src/components/ | v1.0.0 | Thiago Santos | — |
+| src/windows/MainWindow.js | Código-fonte | Desktop | /frontend/desktop/src/windows/ | v1.0.0 | Vinicius Cavalcante | electron |
 
-## Back-end
+## Front-end Mobile
 
-| **Item de Configuração** | **Tipo** | **Plataforma** | **Localização** | **Versão** | **Responsável** | **Dependências** |
-|----------------------------|-----------|----------------|------------------|-------------|------------------|------------------|
-| userController.js | Código-fonte | Backend | `/packages/backend/src/controllers/` | v1.0.0 | **Thiago Santos** | userService.js |
-| accountController.js | Código-fonte | Backend | `/packages/backend/src/controllers/` | v1.0.0 | **Pedro Alexandre** | accountService.js |
-| transactionController.js | Código-fonte | Backend | `/packages/backend/src/controllers/` | v1.0.0 | **Vinicius Cavalcante** | transactionService.js |
-| User.js | Código-fonte | Backend | `/packages/backend/src/models/` | v1.0.0 | **Pedro Alexandre** | db.config.js |
-| Account.js | Código-fonte | Backend | `/packages/backend/src/models/` | v1.0.0 | **Vinicius Cavalcante** | db.config.js |
-| Transaction.js | Código-fonte | Backend | `/packages/backend/src/models/` | v1.0.0 | **Thiago Santos** | db.config.js |
-| userRoutes.js | Código-fonte | Backend | `/packages/backend/src/routes/` | v1.0.0 | **Pedro Alexandre** | userController.js |
-| accountRoutes.js | Código-fonte | Backend | `/packages/backend/src/routes/` | v1.0.0 | **Vinicius Cavalcante** | accountController.js |
-| transactionRoutes.js | Código-fonte | Backend | `/packages/backend/src/routes/` | v1.0.0 | **Thiago Santos** | transactionController.js |
-| transactionService.js | Código-fonte | Backend | `/packages/backend/src/services/` | v1.0.0 | **Pedro Alexandre** | Transaction.js |
-| userService.js | Código-fonte | Backend | `/packages/backend/src/services/` | v1.0.0 | **Vinicius Cavalcante** | User.js |
-| accountService.js | Código-fonte | Backend | `/packages/backend/src/services/` | v1.0.0 | **Thiago Santos** | Account.js |
-| authMiddleware.js | Código-fonte | Backend | `/packages/backend/src/middlewares/` | v1.0.0 | **Pedro Alexandre** | jwt.config.js |
-| errorHandler.js | Código-fonte | Backend | `/packages/backend/src/middlewares/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| transacationUtils.js | Código-fonte | Backend | `/packages/backend/src/utils/` | v1.0.0 | **Thiago Santos** | — |
-| server.js | Código-fonte | Backend | `/packages/backend/src/` | v1.0.0 | **Pedro Alexandre** | routes, middlewares |
-| db.config.js | Configuração | Backend | `/packages/backend/config/` | v1.0.0 | **Vinicius Cavalcante** | .env |
-| jwt.config.js | Configuração | Backend | `/packages/backend/config/` | v1.0.0 | **Thiago Santos** | security/jwt |
-| app.config.js | Configuração | Backend | `/packages/backend/config/` | v1.0.0 | **Pedro Alexandre** | — |
-| package.json | Configuração | Backend | `/packages/backend/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| auth.js | Código-fonte | Segurança | `/packages/security/auth/` | v1.0.0 | **Thiago Santos** | generateToken.js |
-| hashPassword.js | Código-fonte | Segurança | `/packages/security/encryption/` | v1.0.0 | **Pedro Alexandre** | — |
-| decryptData.js | Código-fonte | Segurança | `/packages/security/encryption/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| generateToken.js | Código-fonte | Segurança | `/packages/security/jwt/` | v1.0.0 | **Thiago Santos** | jwt.config.js |
-| verifyToken.js | Código-fonte | Segurança | `/packages/security/jwt/` | v1.0.0 | **Pedro Alexandre** | jwt.config.js |
-| securityHelpers.js | Código-fonte | Segurança | `/packages/security/utils/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| package.json | Configuração | Segurança | `/packages/security/` | v1.0.0 | **Thiago Santos** | — |
-| 001-create-users.js | Migração | Banco de Dados | `/packages/database/migrations/` | v1.0.0 | **Pedro Alexandre** | database.js |
-| 002-create-accounts.js | Migração | Banco de Dados | `/packages/database/migrations/` | v1.0.0 | **Vinicius Cavalcante** | database.js |
-| 003-create-transactions.js | Migração | Banco de Dados | `/packages/database/migrations/` | v1.0.0 | **Thiago Santos** | database.js |
-| usersSeed.js | Seed | Banco de Dados | `/packages/database/seeds/` | v1.0.0 | **Pedro Alexandre** | 001-create-users.js |
-| accountsSeed.js | Seed | Banco de Dados | `/packages/database/seeds/` | v1.0.0 | **Vinicius Cavalcante** | 002-create-accounts.js |
-| database.js | Código-fonte | Banco de Dados | `/packages/database/` | v1.0.0 | **Thiago Santos** | db.config.js |
-| package.json | Configuração | Banco de Dados | `/packages/database/` | v1.0.0 | **Pedro Alexandre** | — |
-| emailService.js | Código-fonte | Notificações | `/packages/notifications/email/` | v1.0.0 | **Vinicius Cavalcante** | — |
-| smsService.js | Código-fonte | Notificações | `/packages/notifications/sms/` | v1.0.0 | **Thiago Santos** | — |
-| pushService.js | Código-fonte | Notificações | `/packages/notifications/push/` | v1.0.0 | **Pedro Alexandre** | — |
-| notificationService.js | Código-fonte | Notificações | `/packages/notifications/` | v1.0.0 | **Vinicius Cavalcante** | emailService.js, smsService.js, pushService.js |
-| package.json | Configuração | Notificações | `/packages/notifications/` | v1.0.0 | **Thiago Santos** | — |
+| Item de Configuração | Tipo | Plataforma | Localização | Versão | Responsável | Dependências |
+|-----------------------|------|-------------|--------------|---------|--------------|---------------|
+| components.json | Configuração | Mobile | /frontend/mobile/ | v1.0.0 | Vinicius Cavalcante | — |
+| next.config.mjs | Configuração | Mobile | /frontend/mobile/ | v1.0.0 | Pedro Alexandre | — |
+| pnpm-lock.yaml | Configuração | Mobile | /frontend/mobile/ | v1.0.0 | Thiago Santos | — |
+| postcss.config.mjs | Configuração | Mobile | /frontend/mobile/ | v1.0.0 | Vinicius Cavalcante | postcss |
+| tsconfig.json | Configuração | Mobile | /frontend/mobile/ | v1.0.0 | Pedro Alexandre | typescript |
+| app/layout.tsx | Código-fonte | Mobile | /frontend/mobile/app/ | v1.0.0 | Thiago Santos | — |
+| app/page.tsx | Código-fonte | Mobile | /frontend/mobile/app/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/theme-provider.tsx | Código-fonte | Mobile | /frontend/mobile/components/ | v1.0.0 | Pedro Alexandre | react |
+| components/ui/aspect-ratio.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/collapsible.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/input.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/kbd.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/label.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/progress.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/separator.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/skeleton.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/sonner.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/spinner.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Thiago Santos | — |
+| components/ui/textarea.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Vinicius Cavalcante | — |
+| components/ui/toaster.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Pedro Alexandre | — |
+| components/ui/use-mobile.tsx | Código-fonte | Mobile | /frontend/mobile/components/ui/ | v1.0.0 | Thiago Santos | — |
+| hooks/use-mobile.ts | Código-fonte | Mobile | /frontend/mobile/hooks/ | v1.0.0 | Vinicius Cavalcante | — |
+| lib/auth.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Pedro Alexandre | — |
+| lib/security.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Thiago Santos | crypto |
+| lib/utils.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Vinicius Cavalcante | — |
+| src/components/Button.js | Código-fonte | Mobile | /frontend/mobile/src/components/ | v1.0.0 | Pedro Alexandre | react-native |
+| src/screens/LoginScreen.js | Código-fonte | Mobile | /frontend/mobile/src/screens/ | v1.0.0 | Thiago
 
+### Back-end
 
+| Item de Configuração | Tipo | Plataforma | Localização | Versão | Responsável | Dependências |
+|-----------------------|------|-------------|--------------|---------|--------------|---------------|
+| package.json | Configuração | Back-end | /backend/ | v1.0.0 | Pedro Alexandre | npm |
+| config/config.yaml | Configuração | Back-end | /backend/config/ | v1.0.0 | Vinicius Cavalcante | — |
+| src/server.js | Código-fonte | Back-end | /backend/src/ | v1.0.0 | Thiago Santos | express |
+| src/controllers/accountController.js | Código-fonte | Back-end | /backend/src/controllers/ | v1.0.0 | Pedro Alexandre | — |
+| src/controllers/transactionController.js | Código-fonte | Back-end | /backend/src/controllers/ | v1.0.0 | Vinicius Cavalcante | — |
+| src/controllers/userController.js | Código-fonte | Back-end | /backend/src/controllers/ | v1.0.0 | Thiago Santos | — |
+| src/middlewares/authMiddleware.js | Código-fonte | Back-end | /backend/src/middlewares/ | v1.0.0 | Pedro Alexandre | jsonwebtoken |
+| src/models/Account.js | Código-fonte | Back-end | /backend/src/models/ | v1.0.0 | Vinicius Cavalcante | mongoose |
+| src/models/Transaction.js | Código-fonte | Back-end | /backend/src/models/ | v1.0.0 | Thiago Santos | mongoose |
+| src/models/User.js | Código-fonte | Back-end | /backend/src/models/ | v1.0.0 | Pedro Alexandre | mongoose |
+| src/routes/accountRoutes.js | Código-fonte | Back-end | /backend/src/routes/ | v1.0.0 | Vinicius Cavalcante | express-router |
+| src/routes/transactionRoutes.js | Código-fonte | Back-end | /backend/src/routes/ | v1.0.0 | Thiago Santos | express-router |
+| src/routes/userRoutes.js | Código-fonte | Back-end | /backend/src/routes/ | v1.0.0 | Pedro Alexandre | express-router |
+| src/services/accountService.js | Código-fonte | Back-end | /backend/src/services/ | v1.0.0 | Vinicius Cavalcante | — |
+| src/services/transactionService.js | Código-fonte | Back-end | /backend/src/services/ | v1.0.0 | Thiago Santos | — |
+| src/services/userService.js | Código-fonte | Back-end | /backend/src/services/ | v1.0.0 | Pedro Alexandre | — |
+| src/utils/transacationUtils.js | Código-fonte | Back-end | /backend/src/utils/ | v1.0.0 | Vinicius Cavalcante | — |
