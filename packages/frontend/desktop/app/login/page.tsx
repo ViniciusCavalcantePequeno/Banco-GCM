@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -11,22 +10,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Loader2, Lock } from "lucide-react"
 import { AuthModule } from "@/lib/auth"
 
+type BankOption = "Caixa Econômica" | "Banco do Brasil"
+
 export default function LoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [bank, setBank] = useState<BankOption>("Caixa Econômica")
   const [isEncrypting, setIsEncrypting] = useState(false)
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
-
     setIsEncrypting(true)
-
     try {
-      // Chama o módulo de autenticação
-      await AuthModule.authenticate(email, password)
-
-      // Redireciona para a tela inicial
+      await AuthModule.authenticate(email, password, bank)
       router.push("/home")
     } finally {
       setIsEncrypting(false)
@@ -35,7 +32,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex">
-      {/* Left side - Branding (hidden on mobile, visible on desktop) */}
       <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-blue-600 to-blue-800 p-12 flex-col justify-between">
         <div>
           <h1 className="text-4xl font-bold text-white mb-4">Banco GCM</h1>
@@ -63,7 +59,6 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right side - Login form */}
       <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4 lg:p-12">
         <Card className="w-full max-w-md lg:max-w-lg">
           <CardHeader className="space-y-1 lg:space-y-2">
@@ -103,6 +98,21 @@ export default function LoginPage() {
                   disabled={isEncrypting}
                   className="h-11 lg:h-12 text-base"
                 />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="bank" className="text-base">
+                  Banco
+                </Label>
+                <select
+                  id="bank"
+                  className="w-full border rounded-md p-2 h-11 lg:h-12 text-base"
+                  value={bank}
+                  onChange={(e) => setBank(e.target.value as BankOption)}
+                  disabled={isEncrypting}
+                >
+                  <option value="Caixa Econômica">Caixa Econômica</option>
+                  <option value="Banco do Brasil">Banco do Brasil</option>
+                </select>
               </div>
               {isEncrypting && (
                 <div className="flex items-center justify-center gap-2 text-sm lg:text-base text-blue-600 bg-blue-50 p-3 lg:p-4 rounded-md">

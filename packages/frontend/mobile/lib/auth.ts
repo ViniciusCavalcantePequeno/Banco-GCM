@@ -1,16 +1,12 @@
 import { SecurityModule } from "./security"
 
-// Módulo de Autenticação
+type BankOption = "Caixa Econômica" | "Banco do Brasil"
+
 export class AuthModule {
-  static async authenticate(email: string, password: string): Promise<boolean> {
+  static async authenticate(email: string, password: string, bank?: BankOption): Promise<boolean> {
     console.log("Dados da autenticação enviados!")
-
-    // Chama o módulo de segurança para encriptar os dados
-    const encryptedData = SecurityModule.encryptData({ email, password })
-
-    // Simula envio para servidor
+    const encryptedData = SecurityModule.encryptData({ email, password }, bank)
     await new Promise((resolve) => setTimeout(resolve, 500))
-
     return true
   }
 }
