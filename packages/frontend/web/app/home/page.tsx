@@ -3,8 +3,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { CreditCard, ArrowUpRight, ArrowDownLeft, FileText, Settings, LogOut } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export default function HomePage() {
+  const router = useRouter()
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
       <header className="bg-white shadow-sm border-b">
@@ -14,7 +17,7 @@ export default function HomePage() {
             <Button variant="ghost" size="icon">
               <Settings className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" onClick={() => router.push("/login")}>
               <LogOut className="h-5 w-5" />
             </Button>
           </div>
@@ -32,7 +35,10 @@ export default function HomePage() {
         </Card>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <Card className="cursor-pointer hover:shadow-lg transition-shadow">
+          <Card
+            onClick={() => router.push("/transfer")}
+            className="cursor-pointer hover:shadow-lg transition-shadow"
+          >
             <CardContent className="flex flex-col items-center justify-center p-6 space-y-2">
               <ArrowUpRight className="h-8 w-8 text-blue-600" />
               <span className="text-sm font-medium">Transferir</span>

@@ -39,7 +39,10 @@ export default function HomePage() {
         </Card>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-          <Card className="cursor-pointer hover:shadow-lg transition-shadow active:scale-95">
+          <Card
+            onClick={() => router.push("/transfer")}
+            className="cursor-pointer hover:shadow-lg transition-shadow active:scale-95"
+          >
             <CardContent className="flex flex-col items-center justify-center p-4 sm:p-6 space-y-2">
               <ArrowUpRight className="h-7 w-7 sm:h-8 sm:w-8 text-blue-600" />
               <span className="text-xs sm:text-sm font-medium text-center">Transferir</span>
@@ -73,7 +76,9 @@ export default function HomePage() {
             <CardTitle className="text-base sm:text-lg">Transações Recentes</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm sm:text-base text-gray-500 text-center py-6 sm:py-8">Nenhuma transação recente</p>
+            <p className="text-sm sm:text-base text-gray-500 text-center py-6 sm:py-8">
+              Nenhuma transação recente
+            </p>
           </CardContent>
         </Card>
       </main>

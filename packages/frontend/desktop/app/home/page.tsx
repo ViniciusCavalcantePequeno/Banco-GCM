@@ -12,9 +12,12 @@ export default function HomePage() {
     router.push("/login")
   }
 
+  const handleTransfer = () => {
+    router.push("/transfer")
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 lg:flex">
-      {/* Sidebar (hidden on mobile, visible on desktop) */}
       <aside className="hidden lg:flex lg:flex-col lg:w-64 bg-white border-r shadow-sm">
         <div className="p-6 border-b">
           <h1 className="text-2xl font-bold text-blue-900">Banco GCM</h1>
@@ -26,7 +29,7 @@ export default function HomePage() {
             <User className="h-5 w-5" />
             <span>Início</span>
           </Button>
-          <Button variant="ghost" className="w-full justify-start gap-3 h-12">
+          <Button variant="ghost" className="w-full justify-start gap-3 h-12" onClick={handleTransfer}>
             <ArrowUpRight className="h-5 w-5" />
             <span>Transferir</span>
           </Button>
@@ -56,9 +59,7 @@ export default function HomePage() {
         </div>
       </aside>
 
-      {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Mobile Header (visible on mobile, hidden on desktop) */}
         <header className="lg:hidden bg-white shadow-sm border-b">
           <div className="px-4 py-4 flex items-center justify-between">
             <h1 className="text-xl font-bold text-blue-900">Banco GCM</h1>
@@ -76,7 +77,6 @@ export default function HomePage() {
           </div>
         </header>
 
-        {/* Desktop Header */}
         <header className="hidden lg:block bg-white shadow-sm border-b">
           <div className="px-8 py-4 flex items-center justify-between">
             <div>
@@ -94,14 +94,10 @@ export default function HomePage() {
           </div>
         </header>
 
-        {/* Main Content Area */}
         <main className="flex-1 p-4 lg:p-8">
           <div className="max-w-7xl mx-auto">
-            {/* Desktop Grid Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-              {/* Left Column - Balance and Quick Actions */}
               <div className="lg:col-span-2 space-y-6 lg:space-y-8">
-                {/* Saldo */}
                 <Card className="shadow-lg">
                   <CardHeader>
                     <CardTitle className="text-lg lg:text-xl text-gray-600">Saldo Disponível</CardTitle>
@@ -112,11 +108,10 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
 
-                {/* Ações Rápidas */}
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Ações Rápidas</h3>
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <Card className="cursor-pointer hover:shadow-lg transition-all hover:scale-105 active:scale-95">
+                    <Card onClick={handleTransfer} className="cursor-pointer hover:shadow-lg transition-all hover:scale-105 active:scale-95">
                       <CardContent className="flex flex-col items-center justify-center p-6 space-y-3">
                         <div className="bg-blue-100 rounded-full p-4">
                           <ArrowUpRight className="h-8 w-8 text-blue-600" />
@@ -154,7 +149,6 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Transações Recentes */}
                 <Card className="shadow-lg">
                   <CardHeader>
                     <CardTitle className="text-lg lg:text-xl">Transações Recentes</CardTitle>
@@ -165,7 +159,6 @@ export default function HomePage() {
                 </Card>
               </div>
 
-              {/* Right Column - Additional Info (Desktop Only) */}
               <div className="hidden lg:block space-y-6">
                 <Card className="shadow-lg">
                   <CardHeader>
