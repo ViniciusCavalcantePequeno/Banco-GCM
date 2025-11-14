@@ -7,13 +7,24 @@ Membros:
 - Thiago dos Santos Araujo 
 - Vinicius Cavalcante Pequeno
 
-# Aplicação
+
+## 📑 Sumário
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Itens de Configuração do Software](#itens-de-configuração-do-software)
+  - [Arquivos Gerais](#arquivos-gerais)
+  - [Front-end Web](#front-end-web)
+  - [Front-end Desktop](#front-end-desktop)
+  - [Front-end Mobile](#front-end-mobile)
+  - [Back-end](#back-end)
+- [Passos para Executar](#passos-para-executar)
+
+## Aplicação
 
 <div align="center">
   <img src="assets/all-devices-black.png" width="800" alt="Telas Iniciais">
 </div>
 
-# Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 Directory structure:
@@ -319,7 +330,7 @@ Directory structure:
         └── integration.test.js
 ```
 
-# Itens de Configuração do Software
+## Itens de Configuração do Software
 
 ### Arquivos Gerais
 
@@ -340,7 +351,7 @@ Directory structure:
 | tests/frontend.test.js | Teste | Geral | /tests/ | v1.0.0 | Thiago Santos | jest |
 | tests/integration.test.js | Teste | Geral | /tests/ | v1.0.0 | Pedro Alexandre | jest |
 
-## Front-end Web
+### Front-end Web
 
 | Item de Configuração | Tipo | Plataforma | Localização | Versão | Responsável | Dependências |
 |-----------------------|------|-------------|--------------|---------|--------------|---------------|
@@ -372,7 +383,7 @@ Directory structure:
 | app/home/page.tsx| Componente/Página | Web | /frontend/web/app/home/ | v1.0.0 | Thiago Santos | React, Next.js, CSS |
 | app/login/page.tsx| Componente/Página | Web | /frontend/web/app/login/ | v1.0.0 | Thiago Santos | React, Next.js, CSS |
 
-## Front-end Desktop
+### Front-end Desktop
 
 | Item de Configuração | Tipo | Plataforma | Localização | Versão | Responsável | Dependências |
 |-----------------------|------|-------------|--------------|---------|--------------|---------------|
@@ -404,7 +415,7 @@ Directory structure:
 | app/home/page.tsx| Componente/Página | Desktop | /frontend/desktop/app/home/ | v1.0.0 | Thiago Santos | React, Next.js, CSS | |
 | app/login/page.tsx| Componente/Página | Desktop | /frontend/desktop/app/login/ | v1.0.0 | Thiago Santos | React, Next.js, CSS | |
 
-## Front-end Mobile
+### Front-end Mobile
 
 | Item de Configuração | Tipo | Plataforma | Localização | Versão | Responsável | Dependências |
 |-----------------------|------|-------------|--------------|---------|--------------|---------------|
@@ -459,7 +470,7 @@ Directory structure:
 | src/utils/transacationUtils.js | Código-fonte | Back-end | /backend/src/utils/ | v1.0.0 | Vinicius Cavalcante | — |
 
 
-# Passos para Executar
+## Passos para Executar
 
 
 1. Clone o repositório:
@@ -488,4 +499,5 @@ Directory structure:
     npm run dev
 
     ```
+
 
