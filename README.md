@@ -380,7 +380,7 @@ Directory structure:
 | lib/auth.ts | Código-fonte | Web | /frontend/web/lib/ | v1.0.0 | Pedro Alexandre | — |
 | lib/security.ts | Código-fonte | Web | /frontend/web/lib/ | v1.0.0 | Vinicius Cavalcante | crypto |
 | lib/utils.ts | Código-fonte | Web | /frontend/web/lib/ | v1.0.0 | Thiago Santos | — |
-| app/home/page.tsx| Componente/Página | Web | /frontend/web/app/home/ | v1.0.0 | Thiago Santos | React, Next.js, CSS |
+| app/home/page.tsx| Componente/Página | Web | /frontend/web/app/home/ | v1.0.2 | Thiago Santos | React, Next.js, CSS |
 | app/login/page.tsx| Componente/Página | Web | /frontend/web/app/login/ | v1.0.0 | Thiago Santos | React, Next.js, CSS |
 
 ### Front-end Desktop
@@ -412,7 +412,7 @@ Directory structure:
 | lib/auth.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Thiago Santos | — |
 | lib/security.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Vinicius Cavalcante | crypto |
 | lib/utils.ts | Código-fonte | Desktop | /frontend/desktop/lib/ | v1.0.0 | Pedro Alexandre | — | |
-| app/home/page.tsx| Componente/Página | Desktop | /frontend/desktop/app/home/ | v1.0.0 | Thiago Santos | React, Next.js, CSS | |
+| app/home/page.tsx| Componente/Página | Desktop | /frontend/desktop/app/home/ | v1.0.2 | Thiago Santos | React, Next.js, CSS | |
 | app/login/page.tsx| Componente/Página | Desktop | /frontend/desktop/app/login/ | v1.0.0 | Thiago Santos | React, Next.js, CSS | |
 
 ### Front-end Mobile
@@ -444,7 +444,7 @@ Directory structure:
 | lib/auth.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Pedro Alexandre | — |
 | lib/security.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Thiago Santos | crypto |
 | lib/utils.ts | Código-fonte | Mobile | /frontend/mobile/lib/ | v1.0.0 | Vinicius Cavalcante | — |
-| app/home/page.tsx | Componente/Página| Mobile | /frontend/mobile/app/home/ | v1.0.0 | Vinicius Cavalcante | React, Next.js, CSS |
+| app/home/page.tsx | Componente/Página| Mobile | /frontend/mobile/app/home/ | v1.0.2 | Vinicius Cavalcante | React, Next.js, CSS |
 | app/login/page.tsx | Componente/Página| Mobile | /frontend/mobile/app/login/ | v1.0.0 | Vinicius Cavalcante | React, Next.js, CSS |
 
 ### Back-end
@@ -499,5 +499,6 @@ Directory structure:
     npm run dev
 
     ```
+
 
 
